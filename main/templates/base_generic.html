@@ -42,8 +42,18 @@
                                 <li><a class="dropdown-item" href="/main/hero_class?heroClass=shooter">Стрелки</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'reg' %}">Авторизация</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Профиль</a></li>
                         <li class="nav-item dropdown">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'exit' %}">Выход</a></li>
+                        <li class="nav-item dropdown">
+                        {% else %}   
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'reg' %}">Регистрация</a></li>
+                        <li class="nav-item dropdown">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'user' %}">Вход </a></li>
+                        <li class="nav-item dropdown">
+                        {% endif %}
+
                     <!-- <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
@@ -63,7 +73,7 @@
 
         {% endblock %}
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Gmail &copy; noname110698@gmail.com</p></div>
         </footer>
         
         <!-- Bootstrap core JS-->
@@ -71,6 +81,7 @@
         <!-- Core theme JS-->
         <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/equip.js' %}"></script>
+        
         
     </body>
 </html>    

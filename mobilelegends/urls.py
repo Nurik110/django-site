@@ -28,6 +28,7 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/main/', permanent=True)),
     path('register/', userViews.register, name="reg"),
     path('login/', authViews.LoginView.as_view(template_name='users/login.html'), name="user"),
+    path('exit/', authViews.LogoutView.as_view(template_name='index.html'), name="exit"),
     
 ]
 if settings.DEBUG:
