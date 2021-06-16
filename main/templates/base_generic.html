@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>MLBB</title>
+        <!-- Favicon-->
+        {% load static %}
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/equip.css' %}" rel="stylesheet">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        
+    </head>
+    
+    <body >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">MLBB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a></li>
+                        <li class="nav-item dropdown">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'equipment' %}">Снаряжение</a></li>
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Герой</a>
+                            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'home' %}">Все</a></li>
+                                <li><a class="dropdown-item" href="/main/hero_class?heroClass=fighter">Бойцы</a></li>
+                                <li><a class="dropdown-item" href="/main/hero_class?heroClass=magician">Маги</a></li>
+                                <li><a class="dropdown-item" href="/main/hero_class?heroClass=tank">Танки</a></li>
+                                <li><a class="dropdown-item" href="/main/hero_class?heroClass=assassin">Ассасины</a></li>
+                                <li><a class="dropdown-item" href="/main/hero_class?heroClass=support">Поддержки</a></li>
+                                <li><a class="dropdown-item" href="/main/hero_class?heroClass=shooter">Стрелки</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'reg' %}">Авторизация</a></li>
+                        <li class="nav-item dropdown">
+                    <!-- <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Корзина
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+                <!-- Navigation-->
+        <!-- Header-->
+          
+          <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+
+        {% block content %}
+
+        {% endblock %}
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/equip.js' %}"></script>
+        
+    </body>
+</html>    

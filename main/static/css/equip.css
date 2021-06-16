@@ -1,0 +1,23 @@
+.filtDiv {
+    display: none; /* Hidden by default */
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .sh {
+    display: block;
+  }
+  
+  #myBtnCont{
+    width: auto; /* Ширина элемента в пикселах */
+    padding: 10px; /* Поля вокруг текста */
+    margin: 10px; /* Выравниваем по центру */
+    background: #fc0; /* Цвет фона */
+    text-align: center
+    
+  }
+  /* head{
+    background-image: url('{% static "heroes_image/Hanzo.jpg"%}')"
+  }
+  body{
+    background-image: url('{% static "heroes_image/Hanzo.jpg"%}')"
+  } */

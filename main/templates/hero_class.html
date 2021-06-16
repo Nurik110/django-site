@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Бойцы</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> <!-- Bootstrap style -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <!-- Magnific pop up style, http://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}"> <!-- Templatemo style -->
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="tm-left-right-container">
+                <!-- Left column: logo and menu -->
+                <div class="tm-blue-bg tm-left-column">
+                    <div class="tm-logo-div text-xs-center">
+                        <h1 class="tm-site-name">Герой</h1>
+                    </div>
+                    <nav class="tm-main-nav">
+                        <ul class="tm-main-nav-ul">
+                            {% for hero in heroes %}
+
+                                {% if hero.group == heroClass and hero.name %}
+                                <li class="tm-nav-item" onclick="window.location='/main/hero_hero?id={{ hero.id }}&heroClass={{heroClass}}'">
+                                <a class="tm-nav-item-link" >
+                                    {{ hero.name }}
+                                </a>
+                                </li>
+                                
+                                {% endif %}
+                                
+                            {% endfor %}
+                            
+                        </ul>
+                        
+                    </nav>
+                </div> <!-- Left column: logo and menu -->
+                
+                <!-- Right column: content -->
+                <div class="tm-center-column">
+                    <header class="bg-dark py-5">
+                        <div class="container px-4 px-lg-5 my-5">
+                            <div class="text-center">
+                                <h1 class="display-4 fw-bolder">Mobile Legends Bang Bang </h1>
+                                
+                            </div>
+                            
+                        </div>
+                        <a class="btn btn-warning" href="{% url 'home' %}">НА ГЛАВНУЮ</a>
+                    </header>
+                            <header>
+                                <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45" >БОЙЦЫ</h2>
+                            </header>
+                            <div>
+                                <p>Описание: Бойцы - это бойцы ближнего боя, которые обладают сочетанием 
+                                    наступательных и оборонительных возможностей. Хотя у них не так много полезности, 
+                                    как у танка, или такого большого урона, как у убийцы, урон бойца со временем будет расти, 
+                                    что делает его серьезной угрозой. Каждый боец обладает уникальным сочетанием мобильности, урона, 
+                                    разрушения и прочности. Бойцы - это промежуточный герой ближнего боя, между прочностью танка или уроном от убийцы, 
+                                    поэтому он делает бойца многоцелевым бойцом, таким как полу-танк, массовый контроллер или танк и убийца.</p>
+                            </div>
+                            <a class="btn btn-warning" href="/main/hero_class?heroClass=fighter">БОЙЦЫ</a>
+                           
+                            <header>
+                                <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">МАГИ</h2>
+                            </header>
+                            <div>
+                                <p>Описание: Маг (обычно известный как Маг в большинстве игр MOBA) является дилером магического урона 
+                                    и играет важную роль в составе любой команды. Их сильные стороны заключаются в их способностях, а не в базовых атаках. 
+                                    Однако они, как правило, мягкие и являются приоритетной целью в командных боях из-за их взрывного урона и способности контролировать толпу.</p>
+                            </div>
+                            <a class="btn btn-warning" href="/main/hero_class?heroClass=magician">МАГИ</a>
+                            <header>
+                                <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">ТАНКИ</h2>
+                            </header>
+                            <div>
+                                <p>Описание: Танки - надежные чемпионы на передовой, которые помогают сдерживать врагов и начинать драки. Обычно они возглавляют атаку, 
+                                    выбирая правильное время и ситуации для начала агрессии. Многие танки также могут защитить своих более хрупких товарищей по команде, оглушая или 
+                                    толкая опасных противников и ограничивая их потенциал урона. В мобильных легендах большинство классов героев действительно универсальны с точки зрения способностей, 
+                                    и с различными вариантами изготовления предметов, « танк » может играть роль бойца в секунду, если вы выберете правильное снаряжение. Обычно танки садятся на нижнюю башню. 
+                                    У танка высокая защита и боеспособность, но низкий урон. Их высокая прочность обычно используется для удержания врага в центре поля боя.</p>
+                            </div>
+                            <a class="btn btn-warning" href="/main/hero_class?heroClass=tank">ТАНКИ</a>
+                            <header>
+                                <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">СТРЕЛКИ</h2>
+                            </header>
+                            <div>
+                                <p>Описание: Стрелок - это тип роли, которая имеет высокий уровень атаки / урона, а также критический урон и дистанцию. Этот тип обычно называют переносом / ADC [Attack Damage Carry]. 
+                                    Стрелок играет важную роль в игре, побеждая врагов на расстоянии. Используя этого героя, будьте умны, чтобы держать дистанцию ​​с героем противника, потому что этот тип героев обычно 
+                                    имеет низкую прочность и мобильность в ранней игре. Герои- стрелки всегда полагаются на танки. При использовании этого типа героя вы должны использовать шестерни, которые увеличивают 
+                                    вашу скорость атаки, потому что, помимо убийства врага, Стрелок также может быстро разрушить башню.</p>
+                            </div>
+                            <a class="btn btn-warning" href="/main/hero_class?heroClass=shooter">СТРЕЛКИ</a>
+                            <header>
+                                <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">УБИЙЦЫ</h2>
+                            </header>
+                            <div>
+                                <p>Описание: Убийца является гибким чемпионом , который специализируется на убийство или отключить роуминг целей собирания их , как они пытаются пополнить HP. 
+                                    Сосредоточенные на проникновении, обмане и мобильности, убийцы - это авантюристические охотники, которые находят благоприятные моменты в битве, прежде чем броситься в бой. 
+                                    Независимо от размера вражеской команды, ассасины специализируются на позиционировании и искусном убийстве. Они бьют, когда наступает подходящее время - не раньше и не позже. 
+                                    Убийцы больше подходят для опытных игроков, так как у них низкий уровень здоровья и высокий взрывной урон. Они идеально подходят для легкого уничтожения противников, 
+                                    но их легче убить из-за неправильного позиционирования и неправильного выбора времени</p>
+                            </div>
+                            <a class="btn btn-warning" href="/main/hero_class?heroClass=assassin">УБИЙЦЫ</a>
+                            <header>
+                                <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Поддержка(Саппорт)</h2>
+                            </header>
+                            <div>
+                                <p>Описание: Поддержка(Саппорт) - помогать и защищать ваших союзников в любой ситуации. Ваша роль - защищать или лечить их, наносить урон или жертвовать собой, чтобы сохранить жизнь другим. 
+                                    Вы часто отказываетесь от славных убийств в игре, чтобы поддержать других, но в конце концов, как правило, это поддержка, чтобы обеспечить истинную награду MVP. 
+                                    Герои поддержки обычно выстраиваются вместе со стрелком на верхней или средней полосе, чтобы иметь возможность быстро перемещаться туда, где они нужны.</p>
+                            </div>
+                            <a class="btn btn-warning" href="/main/hero_class?heroClass=support">Поддержка</a>
+                           
+                        <footer>
+                            <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2017</span> YourCompany|Designed by 
+                                <a href="http://www.templatemo.com" target="_parent">templatemo</a></p>
+                        </footer>
+                    </div>
+
+                </div> 
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+
+    <!-- load JS files -->
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script> <!-- jQuery (https://jquery.com/download/) -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Magnific pop-up (http://dimsemenov.com/plugins/magnific-popup/) -->
+    <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+    <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    <script>
+
+        $(document).ready(function () {
+
+            // Single page nav
+            $('.tm-main-nav').singlePageNav({
+                'currentClass': "active",
+                offset: 20
+            });
+
+            // Magnific pop up
+            $('.tm-gallery-1').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: { enabled: true }
+                // other options
+            });
+
+            $('.tm-gallery-2').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: { enabled: true }
+                // other options
+            });
+
+            $('.tm-gallery-3').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: { enabled: true }
+                // other options
+            });
+
+            $('.tm-current-year').text(new Date().getFullYear());
+        });
+    </script>
+</body>
+
+</html>

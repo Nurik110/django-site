@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+{% load static %}
+    {% block content %}
+
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Mobile Legends Bang Bang </h1>
+                <p class="lead fw-normal text-white-50 mb-0">Снаряжение</p>
+            </div>
+        </div>
+    </header>
+    <div id="myBtnCont" class="menuClass">
+        <button class="btn btn-success activ" onclick="filterSelect('al')" > Все</button>
+        <button class="btn btn-success" onclick="filterSelect('magatt')"> Магическая атака</button>
+        <button class="btn btn-success" onclick="filterSelect('physatt')"> Физическая атака</button>
+        <button class="btn btn-success" onclick="filterSelect('deff')"> Защита</button>
+        <!-- <button class="btn btn-success" onclick="filterSelection('ass')"> Ассасины</button>
+        <button class="btn btn-success" onclick="filterSelection('sup')"> Поддержки</button>
+        <button class="btn btn-success" onclick="filterSelection('sho')"> Стрелки</button> -->
+    </div>
+    {% for post in equip %}
+    {% if post.classs == "magatt" %}
+    <div class="filtDiv magatt">
+        <img src="{{ post.image.url }}" style="float:left; margin: 15px 15px 15px 15px" width="150" height="100">
+        <h2>{{ post.name }}</h2>
+        <p>{{ post.description }}</p>
+        <br style="clear:both">
+    </div>
+    {% endif %}
+    {% if post.classs == "physatt" %}
+    <div class="filtDiv physatt">
+        <img src="{{ post.image.url }}" style="float:left; margin: 15px 15px 15px 15px" width="150" height="100">
+        <h2>{{ post.name }}</h2>
+        <p>{{ post.description }}</p>
+        <br style="clear:both">
+    </div>
+    {% endif %}
+    {% if post.classs == "deff" %}
+    <div class="filtDiv deff">
+        <img src="{{ post.image.url }}" style="float:left; margin: 15px 15px 15px 15px" width="150" height="100">
+        <h2>{{ post.name }}</h2>
+        <p>{{ post.description }}</p>
+        <br style="clear:both">
+    </div>
+    {% endif %}
+    {% endfor %}
+
+    {% endblock %}
+
+    

@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% load crispy_forms_tags %}
+    
+    {% block content %}
+    <div class="container" style="margin-top: 20px;">
+        <div class="form-section">
+            <h1>Авторизация</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy}}
+                <button type="submit" class="btn btn-ouline-warning">Войти</button>
+            </form>
+            <hr>
+            Нету профилья? <a href="{% url 'reg' %}">Зарегистрироваться</a>         
+        </div>
+    </div>
+
+
+
+    {% endblock %}

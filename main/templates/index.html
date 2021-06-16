@@ -1,0 +1,161 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+    
+    {% block content %}
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Mobile Legends Bang Bang </h1>
+                <p class="lead fw-normal text-white-50 mb-0">Гайды</p>
+            </div>
+        </div>
+    </header>
+
+      <div id="myBtnContainer" class="menuClass">
+        <button class="btn btn-success actives" onclick="filterSelection('all')" > Все</button>
+        <button class="btn btn-success" onclick="filterSelection('fig')"> Бойцы</button>
+        <button class="btn btn-success" onclick="filterSelection('mag')"> Маги</button>
+        <button class="btn btn-success" onclick="filterSelection('tan')"> Танки</button>
+        <button class="btn btn-success" onclick="filterSelection('ass')"> Ассасины</button>
+        <button class="btn btn-success" onclick="filterSelection('sup')"> Поддержки</button>
+        <button class="btn btn-success" onclick="filterSelection('sho')"> Стрелки</button>
+      </div>
+    
+        <!-- Section-->
+        <section class="py-5 container" >
+            <div class=" px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-3 justify-content-center">
+                    {% for post in hero %}
+                        {% if post.group == "fighter" %}
+                        <div class="filterDiv fig">
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="{{ post.img.url }}" alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">{{ post.name }}</h5>
+                                            <p>Класс: {{ post.classs }} </p>
+                                            <!-- Product price-->
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/main/hero_hero?id={{ post.id }}&heroClass={{ post.group }}">Подробнее</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% elif post.group == "magician" %}
+                            <div class="col mb-5 filterDiv mag">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="{{ post.img.url }}" alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">{{ post.name }}</h5>
+                                            <p>Класс: {{ post.classs }} </p>
+                                            <!-- Product price-->
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/main/hero_hero?id={{ post.id }}&heroClass={{ post.group }}">Подробнее</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% elif post.group == "assassin" %}
+                            <div class="col mb-5 filterDiv ass">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="{{ post.img.url }}" alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">{{ post.name }}</h5>
+                                            <p>Класс: {{ post.classs }} </p>
+                                            <!-- Product price-->
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/main/hero_hero?id={{ post.id }}&heroClass={{ post.group }}">Подробнее</a></div>
+                                    </div>
+                                </div>
+                            </div> 
+                        {% elif post.group == "tank" %}
+                            <div class="col mb-5 filterDiv tan">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="{{ post.img.url }}" alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">{{ post.name }}</h5>
+                                            <p>Класс: {{ post.classs }} </p>
+                                            <!-- Product price-->
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/main/hero_hero?id={{ post.id }}&heroClass={{ post.group }}">Подробнее</a></div>
+                                    </div>
+                                </div>
+                            </div> 
+                        {% elif post.group == "support" %}
+                            <div class="col mb-5 filterDiv sup">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="{{ post.img.url }}" alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">{{ post.name }}</h5>
+                                            <p>Класс: {{ post.classs }} </p>
+                                            <!-- Product price-->
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/main/hero_hero?id={{ post.id }}&heroClass={{ post.group }}">Подробнее</a></div>
+                                    </div>
+                                </div>
+                            </div> 
+                        {% elif post.group == "shooter" %}
+                            <div class="col mb-5 filterDiv sho">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="{{ post.img.url }}" alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">{{ post.name }}</h5>
+                                            <p>Класс: {{ post.classs }} </p>
+                                            <!-- Product price-->
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/main/hero_hero?id={{ post.id }}&heroClass={{ post.group }}">Подробнее</a></div>
+                                    </div>
+                                </div>
+                            </div> 
+                        {% endif %}                                                       
+                    {% endfor %}
+                </div>
+            </div>
+
+        </section>
+        <!-- Footer-->
+        
+    {% endblock %}
+
