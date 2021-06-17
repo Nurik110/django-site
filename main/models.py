@@ -82,3 +82,11 @@ class Feature(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+class Ability(models.Model):
+    id = models.IntegerField(verbose_name='Айди', primary_key = True)
+    name = models.ForeignKey(Heroes, default=None, on_delete=models.CASCADE,verbose_name='Имя')
+    description = models.TextField(verbose_name='Описания')
+    img = models.ImageField(default = 'noimage.jpg', upload_to='heroes_image', verbose_name='Фото')
+
+    def __str__(self):
+        return f'{self.name}'

@@ -1,27 +1,12 @@
-/*
+.abi{max-width: 1200px;}
 
-Neaty HTML Template
-
-http://www.templatemo.com/tm-501-neaty
-
-*/
-body {
+/* body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 20px;
 	font-weight: 300;
 	overflow-x: hidden;
 	background: white;
 }
-
-a, button { transition: all 0.3s ease; }
-a:hover,
-a:focus {
-	text-decoration: none;
-	outline: none;
-}
-
-.row { display: block; }
-.tm-left-right-container { width: 100%; }
 
 .tm-blue-bg {
 	background-color: black;
@@ -31,224 +16,48 @@ a:focus {
 .tm-blue-text {	color: black; }
 .tm-blue-bg a {	color: white; }
 
-.tm-site-name {
-	font-size: 4rem;
-	margin-top: 20px;
-}
+
 
 .tm-logo-div { 
 	padding-top: 40px; 
 	padding-bottom: 40px;
-}
+} */
 
-.tm-main-nav { display: none; }
+/* // Малые девайсы («ландшафтные телефоны», >= 576px)
+@media (min-width: 576px) { ... }
 
-.tm-main-nav-ul {
-	display: inline-block;
-	padding-left: 0;
-}
+// Средние девайсы («таблетки», >= 768px)
+@media (min-width: 768px) { ... }
 
-.tm-section { margin-bottom: 60px; }
-.tm-welcome-title {	font-size: 2.4rem; }
-.tm-section-title {	font-size: 2.2rem; }
-.tm-content-div { padding: 40px; }
-.tm-margin-b-45 { margin-bottom: 45px; }
-.tm-margin-b-30 { margin-bottom: 30px; }
-p { line-height: 2; }
+// Большие девайсы (десктопы, >= 992px)
+@media (min-width: 992px) { ... }
 
-.tm-button {
-	background-color: green;
-	border: none;
-	color: white;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1.4rem;	
-	padding: 18px 35px;
-}
-
-.tm-button-wide { padding: 18px 40px; }
-
-.tm-button:hover,
-.tm-button:active,
-.tm-button:focus {
-	background-color: #2790c6;
-	color: white;
-}
-
-.tm-nav-item:hover a,
-.tm-nav-item:active a,
-.tm-nav-item:focus a,
-.tm-nav-item-link.active {
-	color: #f4ef5e;
-}
-
-.tm-about-img-container { margin-top: 50px; }
-
-.tm-gallery-container {
-	overflow: auto;
-	margin-left: -5px;
-	margin-right: -5px;
-}
-
-.tm-img-container {	float: left; }
-
-.tm-img-container-1,
-.tm-img-container-2,
-.tm-img-container-3 { 
-	margin-bottom: 10px;
-	width: 50%; 
-}
-
-.tm-img-tn {
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.tm-img-tn {
-	display: block;
-	margin: 0 auto;
-}
-
-.tm-contact-right { margin-top: 40px; }
-
-.form-control {
-	border-color: green;
-	border-radius: 0;
-	color: #4286ab;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 1.3rem;
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-	color: #4286ab !important;
-}
- 
-input:-moz-placeholder,
-textarea:-moz-placeholder { /* Firefox 18- */
-	color: #4286ab !important;  
-}
- 
-input::-moz-placeholder,
-textarea::-moz-placeholder {  /* Firefox 19+ */
-	color: #4286ab !important;  
-}
- 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {  
-	color: #4286ab !important;  
-}
-
-.tm-contact-right {	padding-left: 15px; }
-.tm-copyright-p { margin-bottom: 0; }
-
+// Экстрабольшие девайсы (большие десктопы, >= 1200px)
+@media (min-width: 1200px) { ... } */
 /* Media Queries */
-@media (min-width: 576px) {
-	.container { width: 100%; }
-	.tm-site-name { margin-top: 35px; }
-	.tm-welcome-title { font-size: 3rem; }
-	.tm-img-container-1 { width: 20%; }
-	.tm-img-container-2 { width: 33.3334%; }
-	.tm-img-container-3 { width: 25%; }
+@media (max-width: 576px) {
+	.tm-img{ width: 400px;
+		height:300px;}
+	.tm-tm-img { width: 400px;
+		height:300px;}
+	.tm-column {text-align: center;}
+	.abill{	width: 80px;
+			height:80px;}
+	.rowi{max-width: 400px}	
+	.may{max-width: 500px}
+	
+}
+@media (max-width: 768px) {
+	.tm-img{ width: 500px;
+		height:300px;}
+	.may{max-width: 500px;}
+	.center-may {text-align: center;}
 }
 
-@media (min-width: 768px) {
-	.tm-about-img-container { margin-top: 0; }
-}
 
-@media (min-width: 992px) {
-	.tm-main-nav {
-		display: flex;
-		justify-content: center;
-	}
-
-	/* .margin-top-20{
-		padding-top: 100px;
-	} */
-	.tm-left-column { 
-		position: fixed; 
-		height: 100%;
-		width: 300px; /* Ширина левой колонки */
- 		float: left;
-	}
-
-	.container { width: 100%; }
-	.tm-left-column { width: 20%; }
-
-	.tm-center-column {
-		float: center;
-		margin: 0 400px 0 380px;
-		background: white; /* Отступ на ширину левой и правой колонки*/
-	}
-	.tm-right-column {
-		width: 500px; /* Ширина правой колонки */
- 		float: right; 
-		height: 100%;
-		background: white;
-	}
-	.tm-nav-item {
-		cursor: pointer;
-		font-size: 1.5rem;
-		list-style: none;
-		padding: 18px 30px;
-		transition: all 0.3s ease;
-	}
-
-	.tm-site-name {
-	    font-size: 3.3rem;
-	    margin-top: 30px;
-	}
-
-	.tm-logo-div {
-	    padding-top: 50px;
-	    padding-bottom: 50px;
-	}
-
-	.tm-section { margin-bottom: 100px; }
-
-	.tm-content-div { padding: 80px 40px 30px 80px;	}
-
-	.tm-img-container-1 {
-		margin-bottom: 10px;
-		width: 33.3334%;
-	}
-
-	.tm-img-container-2 {
-		margin-bottom: 10px;
-		width: 50%;
-	}
-
-	.tm-img-container-3 {
-		margin-bottom: 10px;
-		width: 33.3333%;
-	}
-
-	.tm-contact-right { margin-top: 0; }
-}
-
-@media (min-width: 1200px) {		
-	.container { width: 100%; }	
-	.tm-button-wide { padding: 18px 68px; }
-	.tm-img-container-1 { width: 20%; }
-	.tm-img-container-2 { width: 33.3333%; }
-	.tm-img-container-3 { width: 25%; }
-	.tm-contact-right { padding-left: 42px; }
-}
-
-@media (min-width: 1500px) {	
+/* @media (min-width: 1500px) {	
 	.container { width: 100%; }
 	p { margin-bottom: 30px; }
-
-	.tm-gallery-container {
-		overflow: auto;
-		margin-left: -10px;
-		margin-right: -10px;
-	}
-
-	.tm-img-tn {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
 }
 
 @media (min-width: 1800px) {
@@ -256,21 +65,8 @@ textarea:-ms-input-placeholder {
 	.tm-left-right-container {
 	    width: 100%;
 	}
+    p { margin-bottom: 36px; }
 
-	p { margin-bottom: 36px; }
-
-	.tm-gallery-container {
-		overflow: auto;
-		margin-left: -10px;
-		margin-right: -10px;
-	}
-
-	.tm-img-container-1 { width: 20%; }
-
-	.tm-img-tn {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
 }
 
 @media (max-height: 860px) {
@@ -278,13 +74,7 @@ textarea:-ms-input-placeholder {
 	    padding-top: 45px;
 	    padding-bottom: 20px;
 	}
-
 	.tm-nav-item { font-size: 1.4rem; }
-
-	.tm-site-name {
-		font-size: 2.4rem;
-		margin-top: 10px;
-	}
 }
 
 @media (min-height: 859px) {
@@ -292,6 +82,5 @@ textarea:-ms-input-placeholder {
 	    padding-top: 100px;
 	    padding-bottom: 100px;
 	}
-
 	.tm-nav-item { font-size: 1.9rem; }
-}
+} */

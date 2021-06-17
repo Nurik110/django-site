@@ -1,31 +1,64 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    {% load static %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>{{ heroClass }}</title>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
-    <!-- Google web font "Open Sans" -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> <!-- Bootstrap style -->
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <!-- Magnific pop up style, http://dimsemenov.com/plugins/magnific-popup/ -->
-    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}"> <!-- Templatemo style -->
-
-
-</head>
-
-<body>
-
-
-    <div class="container">
+{% extends "base_generic.html" %}
+{% load static %}
+    {% block content %}
+    <header class="bg-dark py-5 ">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white may">
+                <h1 class="display-4 fw-bolder center-may">Mobile Legends Bang Bang </h1>
+                <p class="lead fw-normal text-white-50 mb-0">{{ hero.name }}</p>
+            </div>
+        </div>
+    </header>
+    <div class="container rowi">
         <div class="row">
             <div class="tm-left-right-container">
-                <!-- Left column: logo and menu -->
+                <div class="tm-center-column" style="color: black;">
+                    <figure class="tm-column">
+                        <header style="text-align: center;">
+                            <h2 class=>{{ hero.name }}</h2>
+                        </header>
+                        <img class="tm-img" style="float:left; margin:10px" src="{{ hero.img.url }}" width="900px" alt="Header image" id="bigPic">
+                            <h5 class="margin-img">Класс: {{ hero.classs }}</h5>
+                        {% for post in heroe %} 
+                        <ul >    
+                            <li>ХП: {{ post.hp }}</li>
+                            <li>ХП реген: {{ post.hp_regen }}</li>
+                            <li>MП: {{ post.mp }}</li>
+                            <li>Мана реген: {{ post.mana_regen }}</li>
+                            <li>Физическая атака: {{ post.phyatt }}</li>
+                            <li>Физическая защита: {{ post.phydef }}</li>
+                            <li>Магическая атака: {{ post.magatt }}</li>
+                            <li>Магическая защита: {{ post.magdef }}</li>
+                            <li>Скорость передвижение: {{ post.mov_speed }}</li>
+                            <li>Скорость атаки: {{ post.att_speed }}</li>
+                            <li>Физический вампиризм: {{ post.phy_vam }}</li>
+                            <li>Магический вампиризм: {{ post.mag_vam }}</li>
+                            <li>Базовая вероятность критического удара: {{ post.bas_atk_crit }}</li>
+                            <li>Вероятность критического удара способностей: {{ post.ability_crit }}</li>
+                        </ul>    
+                    {% endfor %}
+                    <hr>
+                        <h2 style="margin-top: 120px;">Облики</h2>
+                        {% for post in imag %}
+                        <a class="tm-nav-item-link" >
+                            <img class="tm-tm-img" src="{{ post.image.url }}" width="400px" height="300px" onclick="clik(this);">
+                        </a>
+                        {% endfor %}
+
+                        
+                    </figure>
+                    {% for her in abil %}
+                    <div id="myBtnCont" class="abi">
+                        <div class="btn btn-success" >
+                            <img class="abill"  src="{{ her.img.url }}" width="80px" height="80px">
+                            <p>{{her.description}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <h3>Описание: {{ hero.description }}</h3>
+                    <a class="btn btn-warning" href="{% url 'home' %}">Назад</a>
+                </div>   
                 <div class="tm-blue-bg tm-left-column">
                     <div class="tm-logo-div text-xs-center">
                         <h1 class="tm-site-name">
@@ -47,129 +80,21 @@
                     <nav class="tm-main-nav">
                         <ul class="tm-main-nav-ul">
                             {% for hero in heroes %}
-
                                 {% if hero.group == heroClass and hero.name %}
                                 <li class="tm-nav-item" onclick="window.location='/main/hero_hero?id={{ hero.id }}&heroClass={{heroClass}}'">
-                                <a class="tm-nav-item-link" >
-                                    {{ hero.name }}
-                                </a>
+                                    <button class="btn btn-success" >
+                                        <a class="tm-nav-item-link" style="color:white">
+                                            {{ hero.name }}
+                                        </a>
+                                    </button>
                                 </li>
-                                
                                 {% endif %}
-                                
                             {% endfor %}
-                            
                         </ul>
-                        
                     </nav>
-                </div> <!-- Left column: logo and menu -->
-                <div class="tm-right-column" style="color: black;">
-                        <header>
-                            <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">{{ hero.name }}</h2>
-                            <p>Класс: {{ hero.classs }}</p>
-                        </header>
-                        {% for post in heroe %} 
-                    <ul>    
-                        <li>ХП: {{ post.hp }}</li>
-                        <li>ХП реген: {{ post.hp_regen }}</li>
-                        <li>MП: {{ post.mp }}</li>
-                        <li>Мана реген: {{ post.mana_regen }}</li>
-                        <li>Физическая атака: {{ post.phyatt }}</li>
-                        <li>Физическая защита: {{ post.phydef }}</li>
-                        <li>Магическая атака: {{ post.magatt }}</li>
-                        <li>Магическая защита: {{ post.magdef }}</li>
-                        <li>Скорость передвижение: {{ post.mov_speed }}</li>
-                        <li>Скорость атаки: {{ post.att_speed }}</li>
-                        <li>Физический вампиризм: {{ post.phy_vam }}</li>
-                        <li>Магический вампиризм: {{ post.mag_vam }}</li>
-                        <li>Базовая вероятность критического удара: {{ post.bas_atk_crit }}</li>
-                        <li>Вероятность критического удара способностей: {{ post.ability_crit }}</li>
-                    </ul>    
-                        
-                        {% endfor %}
-                       
-                    
-                </div>
-                    
-                    
-                </div>
-                
-                
-                <!-- Right column: content -->
-                <div class="tm-center-column" style="color: black;">
-                    <figure>
-                        <img src="{{ hero.img.url }}" width="900px" alt="Header image" id="bigPic">
-                        <h2 class=>Облики</h2>
-                        {% for post in imag %}
-                            <a class="tm-nav-item-link" >
-                                <img src="{{ post.image.url }}" width="296px" height="200px" onclick="clik(this);">
-                            </a>
-                        {% endfor %}
-                    </figure>
-
-                    <div >
-                        <header>
-                            <h2 class=>{{ hero.name }}</h2>
-                        </header>
-                        <div>
-                            <p>Класс: {{ hero.classs }}</p>
-                            <p>Описание: {{ hero.description }}</p>
-                        </div>  
-                        
-                    </div>
-                    <a class="btn btn-warning" href="{% url 'home' %}">Назад</a>
-                    
-                
-            </div>
+                </div>  
+            </div>  
         </div> <!-- row -->
-                <footer style="margin-left: 380px;">
-                    <p class="tm-copyright-p">noname110698@gmail.com &copy; <span class="tm-current-year">2021</span> Mobile legends
-                        <a href="https://mail.google.com" target="_parent">Gmail</a></p>
-                </footer>
-    </div> <!-- container -->
-    
-    <!-- load JS files -->
-    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script> <!-- jQuery (https://jquery.com/download/) -->
-    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-    <!-- Magnific pop-up (http://dimsemenov.com/plugins/magnific-popup/) -->
-    <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
-    <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    </div> 
     <script type="text/javascript" src="{% static 'js/image.js' %}"></script>
-    <script>
-
-        $(document).ready(function () {
-
-            // Single page nav
-            $('.tm-main-nav').singlePageNav({
-                'currentClass': "active",
-                offset: 20
-            });
-
-            // Magnific pop up
-            $('.tm-gallery-1').magnificPopup({
-                delegate: 'a', // child items selector, by clicking on it popup will open
-                type: 'image',
-                gallery: { enabled: true }
-                // other options
-            });
-
-            $('.tm-gallery-2').magnificPopup({
-                delegate: 'a', // child items selector, by clicking on it popup will open
-                type: 'image',
-                gallery: { enabled: true }
-                // other options
-            });
-
-            $('.tm-gallery-3').magnificPopup({
-                delegate: 'a', // child items selector, by clicking on it popup will open
-                type: 'image',
-                gallery: { enabled: true }
-                // other options
-            });
-
-            $('.tm-current-year').text(new Date().getFullYear());
-        });
-    </script>
-</body>
-
-</html>
+    {% endblock %}

@@ -3,6 +3,8 @@ from .models import Heroes
 from .models import Images
 from .models import Equipment
 from .models import Feature
+from .models import Ability
+
 # Подключение стандартной формы для регистрации
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
@@ -33,6 +35,7 @@ def hero_hero(request):
     heroClass = request.GET.get("heroClass")
     imag = Images.objects.filter(post = id)
     heroe = Feature.objects.filter(name = id)
+    abil = Ability.objects.filter(name = id)
     return render(
         request, 
         'hero_hero.html', 
@@ -42,7 +45,9 @@ def hero_hero(request):
             'id': id, 
             'heroClass': heroClass, 
             'imag': imag,
-            'heroe': heroe
+            'heroe': heroe,
+            'abil': abil
+
         },
     )
 def hero_class(request):
