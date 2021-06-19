@@ -9,17 +9,24 @@
             </div>
         </div>
     </header>
-    <div class="container rowi">
+    <div class="container rowi width-max">
         <div class="row">
             <div class="tm-left-right-container">
                 <div class="tm-center-column" style="color: black;">
                     <figure class="tm-column">
                         <header style="text-align: center;">
                             <h2 class=>{{ hero.name }}</h2>
+                            <h3 class="margin-img">Класс: {{ hero.classs }}</h3>
                         </header>
                         <img class="tm-img" style="float:left; margin:10px" src="{{ hero.img.url }}" width="900px" alt="Header image" id="bigPic">
-                            <h5 class="margin-img">Класс: {{ hero.classs }}</h5>
-                        {% for post in heroe %} 
+                        <h2>Облики</h2>
+                        {% for post in imag %}<div>
+                        <a class="tm-nav-item-link" >
+                            <img class="tm-tm-img" src="{{ post.image.url }}" width="270" height="155px" onclick="clik(this);">
+                        </a></div>
+                        {% endfor %}
+                            
+                        <!-- {% for post in heroe %} 
                         <ul >    
                             <li>ХП: {{ post.hp }}</li>
                             <li>ХП реген: {{ post.hp_regen }}</li>
@@ -36,64 +43,59 @@
                             <li>Базовая вероятность критического удара: {{ post.bas_atk_crit }}</li>
                             <li>Вероятность критического удара способностей: {{ post.ability_crit }}</li>
                         </ul>    
-                    {% endfor %}
-                    <hr>
-                        <h2 style="margin-top: 120px;">Облики</h2>
-                        {% for post in imag %}
-                        <a class="tm-nav-item-link" >
-                            <img class="tm-tm-img" src="{{ post.image.url }}" width="400px" height="300px" onclick="clik(this);">
-                        </a>
-                        {% endfor %}
-
-                        
-                    </figure>
-                    {% for her in abil %}
-                    <div id="myBtnCont" class="abi">
-                        <div class="btn btn-success" >
-                            <img class="abill"  src="{{ her.img.url }}" width="80px" height="80px">
-                            <p>{{her.description}}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-
-                    <h3>Описание: {{ hero.description }}</h3>
-                    <a class="btn btn-warning" href="{% url 'home' %}">Назад</a>
-                </div>   
-                <div class="tm-blue-bg tm-left-column">
-                    <div class="tm-logo-div text-xs-center">
-                        <h1 class="tm-site-name">
-                        {% if hero.group == "fighter" %}
-                        <div>Бойцы</div>
-                        {% elif hero.group == "tank" %}
-                        <div>Танки</div> 
-                        {% elif hero.group == "magician" %}
-                        <div>Маги</div>
-                        {% elif hero.group == "assassin" %}
-                        <div>Ассасины</div> 
-                        {% elif hero.group == "support" %}
-                        <div>Поддержки</div>
-                        {% elif hero.group == "shooter" %}
-                        <div>Стрелки</div> 
-                        {% endif %}   
-                        </h1> 
-                    </div>
-                    <nav class="tm-main-nav">
-                        <ul class="tm-main-nav-ul">
-                            {% for hero in heroes %}
-                                {% if hero.group == heroClass and hero.name %}
-                                <li class="tm-nav-item" onclick="window.location='/main/hero_hero?id={{ hero.id }}&heroClass={{heroClass}}'">
-                                    <button class="btn btn-success" >
-                                        <a class="tm-nav-item-link" style="color:white">
-                                            {{ hero.name }}
-                                        </a>
-                                    </button>
-                                </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </nav>
+                    {% endfor %} -->
+                    
                 </div>  
-            </div>  
+            
+            </div> 
+        </figure >
+        <h3>Описание: {{ hero.description }}</h3>
+        <hr>
+            <h2>Способности</h2>
+        {% for her in abil %}
+            <div id="myBtnCont" class="abi">
+                <div class="btn btn-success" >
+                    <img class="abill"  src="{{ her.img.url }}" width="80px" height="80px">
+                    <p>{{her.description}}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <a class="btn btn-warning" href="{% url 'home' %}" style="max-width: 1210px;">Назад</a> 
+            <div class="tm-blue-bg tm-left-column">
+                <div class="tm-logo-div text-xs-center">
+                    <h1 class="tm-site-name">
+                    {% if hero.group == "fighter" %}
+                    <div>Бойцы</div>
+                    {% elif hero.group == "tank" %}
+                    <div>Танки</div> 
+                    {% elif hero.group == "magician" %}
+                    <div>Маги</div>
+                    {% elif hero.group == "assassin" %}
+                    <div>Ассасины</div> 
+                    {% elif hero.group == "support" %}
+                    <div>Поддержки</div>
+                    {% elif hero.group == "shooter" %}
+                    <div>Стрелки</div> 
+                    {% endif %}   
+                    </h1> 
+                </div>
+                <nav class="tm-main-nav">
+                    <ul class="tm-main-nav-ul">
+                        {% for hero in heroes %}
+                            {% if hero.group == heroClass and hero.name %}
+                            <li class="tm-nav-item" onclick="window.location='/main/hero_hero?id={{ hero.id }}&heroClass={{heroClass}}'">
+                                <button class="btn btn-success" >
+                                    <a class="tm-nav-item-link" style="color:white">
+                                        {{ hero.name }}
+                                    </a>
+                                </button>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>   
         </div> <!-- row -->
     </div> 
     <script type="text/javascript" src="{% static 'js/image.js' %}"></script>

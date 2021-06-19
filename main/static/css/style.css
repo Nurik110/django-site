@@ -13,7 +13,7 @@
   margin: 10px; /* Выравниваем по центру */
   background: #fc0; /* Цвет фона */
   text-align: center
-  
+
 }
 /* head{
   background-image: url('{% static "heroes_image/Hanzo.jpg"%}')
@@ -21,24 +21,13 @@
 body{
   background:white;
 }
-/* .menuClass{
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
-  
-} */
-/* Style the buttons */
-/* .btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-} */
+.width-max{
 
-/* Add a light grey background on mouse-over */
-/* .btn:hover {
-  background-color: #ddd;
+  max-width: 1250px;
+}
+/* @media (max-width: 576px) {
+	.filterDiv{
+    width: 200px;
+  }
+	
 } */
-
-/* Add a dark background to the active button */
