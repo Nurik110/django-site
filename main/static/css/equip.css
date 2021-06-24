@@ -11,7 +11,7 @@
     width: auto; /* Ширина элемента в пикселах */
     padding: 10px; /* Поля вокруг текста */
     margin: 10px; /* Выравниваем по центру */
-    background: #fc0; /* Цвет фона */
+    background: grey; /* Цвет фона */
     text-align: center
     
   }

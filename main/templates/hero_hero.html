@@ -9,11 +9,11 @@
             </div>
         </div>
     </header>
-    <div class="container rowi width-max">
+    <div class="container width-max " >
         <div class="row">
             <div class="tm-left-right-container">
                 <div class="tm-center-column" style="color: black;">
-                    <figure class="tm-column">
+                    <figure class="tm-column hero-hero-center" >
                         <header style="text-align: center;">
                             <h2 class=>{{ hero.name }}</h2>
                             <h3 class="margin-img">Класс: {{ hero.classs }}</h3>
@@ -49,19 +49,19 @@
             
             </div> 
         </figure >
-        <h3>Описание: {{ hero.description }}</h3>
+        <h3 class="h3-p">Описание: {{ hero.description }}</h3>
         <hr>
             <h2>Способности</h2>
         {% for her in abil %}
-            <div id="myBtnCont" class="abi">
-                <div class="btn btn-success" >
+            <div id="myBtnCont" >
+                <div class="btn btn-success abi" >
                     <img class="abill"  src="{{ her.img.url }}" width="80px" height="80px">
-                    <p>{{her.description}}</p>
+                    <p class="h3-p1">{{her.description}}</p>
                 </div>
             </div>
         {% endfor %}
 
-        <a class="btn btn-warning" href="{% url 'home' %}" style="max-width: 1210px;">Назад</a> 
+        <a class="btn btn-success" href="{% url 'home' %}" style="max-width: 1210px;">Назад</a> 
             <div class="tm-blue-bg tm-left-column">
                 <div class="tm-logo-div text-xs-center">
                     <h1 class="tm-site-name">

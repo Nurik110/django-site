@@ -9,7 +9,7 @@
             </div>
         </div>
     </header>
-    <div class="container" style="background-color: #28a745;">
+    <div class="container" style="background-color: grey;">
         <div class="row">
             <div class="tm-left-right-container">
                 <div class="tm-center-column">
@@ -23,7 +23,7 @@
                         {% for hero in heroes %}
                             {% if hero.group == heroClass and hero.name %}
                             <li class="tm-nav-item" onclick="window.location='/main/hero_hero?id={{ hero.id }}&heroClass={{heroClass}}'">
-                                <button class="btn btn-warning" >
+                                <button class="btn btn-success" >
                                     <a class="tm-nav-item-link" style="color:black">
                                         {{ hero.name }}
                                     </a>
@@ -33,7 +33,7 @@
                         {% endfor %}
                     </ul>
                 </nav>
-                        <a class="btn btn-warning" href="{% url 'home' %}">НА ГЛАВНУЮ</a>
+                        <a class="btn btn-success" href="{% url 'home' %}">НА ГЛАВНУЮ</a>
 
                         <hr>
                             <header>
@@ -47,7 +47,7 @@
                                     разрушения и прочности. Бойцы - это промежуточный герой ближнего боя, между прочностью танка или уроном от убийцы, 
                                     поэтому он делает бойца многоцелевым бойцом, таким как полу-танк, массовый контроллер или танк и убийца.</p>
                             </div>
-                            <a class="btn btn-warning" href="/main/hero_class?heroClass=fighter">БОЙЦЫ</a>
+                            <a class="btn btn-success" href="/main/hero_class?heroClass=fighter">БОЙЦЫ</a>
                         <hr>   
                             <header>
                                 <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">МАГИ</h2>
@@ -57,7 +57,7 @@
                                     и играет важную роль в составе любой команды. Их сильные стороны заключаются в их способностях, а не в базовых атаках. 
                                     Однако они, как правило, мягкие и являются приоритетной целью в командных боях из-за их взрывного урона и способности контролировать толпу.</p>
                             </div>
-                            <a class="btn btn-warning" href="/main/hero_class?heroClass=magician">МАГИ</a>
+                            <a class="btn btn-success" href="/main/hero_class?heroClass=magician">МАГИ</a>
                         <hr>        
                             <header>
                                 <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">ТАНКИ</h2>
@@ -69,7 +69,7 @@
                                     и с различными вариантами изготовления предметов, « танк » может играть роль бойца в секунду, если вы выберете правильное снаряжение. Обычно танки садятся на нижнюю башню. 
                                     У танка высокая защита и боеспособность, но низкий урон. Их высокая прочность обычно используется для удержания врага в центре поля боя.</p>
                             </div>
-                            <a class="btn btn-warning" href="/main/hero_class?heroClass=tank">ТАНКИ</a>
+                            <a class="btn btn-success" href="/main/hero_class?heroClass=tank">ТАНКИ</a>
                         <hr>
                             <header>
                                 <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">СТРЕЛКИ</h2>
@@ -80,7 +80,7 @@
                                     имеет низкую прочность и мобильность в ранней игре. Герои- стрелки всегда полагаются на танки. При использовании этого типа героя вы должны использовать шестерни, которые увеличивают 
                                     вашу скорость атаки, потому что, помимо убийства врага, Стрелок также может быстро разрушить башню.</p>
                             </div>
-                            <a class="btn btn-warning" href="/main/hero_class?heroClass=shooter">СТРЕЛКИ</a>
+                            <a class="btn btn-success" href="/main/hero_class?heroClass=shooter">СТРЕЛКИ</a>
                         <hr>
                             <header>
                                 <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">УБИЙЦЫ</h2>
@@ -92,7 +92,7 @@
                                     Убийцы больше подходят для опытных игроков, так как у них низкий уровень здоровья и высокий взрывной урон. Они идеально подходят для легкого уничтожения противников, 
                                     но их легче убить из-за неправильного позиционирования и неправильного выбора времени</p>
                             </div>
-                            <a class="btn btn-warning" href="/main/hero_class?heroClass=assassin">УБИЙЦЫ</a>
+                            <a class="btn btn-success" href="/main/hero_class?heroClass=assassin">УБИЙЦЫ</a>
                         <hr>
                             <header>
                                 <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Поддержка(Саппорт)</h2>
@@ -102,7 +102,7 @@
                                     Вы часто отказываетесь от славных убийств в игре, чтобы поддержать других, но в конце концов, как правило, это поддержка, чтобы обеспечить истинную награду MVP. 
                                     Герои поддержки обычно выстраиваются вместе со стрелком на верхней или средней полосе, чтобы иметь возможность быстро перемещаться туда, где они нужны.</p>
                             </div>
-                            <a class="btn btn-warning" href="/main/hero_class?heroClass=support">Поддержка</a>
+                            <a class="btn btn-success" href="/main/hero_class?heroClass=support">Поддержка</a>
                     </div>
                 </div> 
                     

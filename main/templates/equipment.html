@@ -19,13 +19,14 @@
         <button class="btn btn-success" onclick="filterSelection('sup')"> Поддержки</button>
         <button class="btn btn-success" onclick="filterSelection('sho')"> Стрелки</button> -->
     </div>
+    <div class="container"   style="background-color: grey; margin-top: 20px; margin-bottom: 20px;" >
     {% for post in equip %}
     {% if post.classs == "magatt" %}
     <div class="filtDiv magatt">
         <img src="{{ post.image.url }}" style="float:left; margin: 15px 15px 15px 15px" width="150" height="100">
         <h2>{{ post.name }}</h2>
         <p>{{ post.description }}</p>
-        <br style="clear:both">
+        
     </div>
     {% endif %}
     {% if post.classs == "physatt" %}
@@ -33,7 +34,7 @@
         <img src="{{ post.image.url }}" style="float:left; margin: 15px 15px 15px 15px" width="150" height="100">
         <h2>{{ post.name }}</h2>
         <p>{{ post.description }}</p>
-        <br style="clear:both">
+        
     </div>
     {% endif %}
     {% if post.classs == "deff" %}
@@ -41,11 +42,12 @@
         <img src="{{ post.image.url }}" style="float:left; margin: 15px 15px 15px 15px" width="150" height="100">
         <h2>{{ post.name }}</h2>
         <p>{{ post.description }}</p>
-        <br style="clear:both">
+        
     </div>
     {% endif %}
     {% endfor %}
-
+           
+</div>
     {% endblock %}
 
     
