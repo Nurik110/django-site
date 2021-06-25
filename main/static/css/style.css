@@ -15,6 +15,9 @@
   text-align: center
 
 }
+.card-body{
+	height: 150px;
+}
 /* head{
   background-image: url('{% static "heroes_image/Hanzo.jpg"%}')
 } */
